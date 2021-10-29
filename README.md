@@ -7,8 +7,7 @@ I have learned a lot from this project. Here are some of my personal takeaways:
   1. The importance of having data organized into folders. I recognized this early and made folders on my desktop to separate the original files from the edited    
      ones.
   3. The importance of documenting work. I wish I made a notes in my SQL queries to describe what my thought process was. This is something I will make an effort to      get better at in my next project.
-  4. The internet is a very helpful resource. I could not have completed this project without the help of Google and StackOverflow. I've also recognized the      
-     importance of knowing what to search for (being specific).
+  4. The internet is a very helpful resource. I could not have completed this project without the help of Google and StackOverflow. I've also recognized the    importance of knowing what to search for (being specific).
   5. It is possible to load and manipulate CSV files in Excel.
   6. SQL is very helpful when it comes to creating tables, and is much faster than Excel.
   7. I enjoy coding, and find it rewarding when I fix an error in my code or discover something interesting in the data.
