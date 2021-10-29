@@ -29,3 +29,13 @@ SELECT
 FROM `course-3-week-3-327122.BellaBeat.hourlyCalories_merged_edited`
 WHERE Activity_Hour = '23:00'
 
+
+# Joining tables:
+SELECT
+    Calories as Calories_burned,
+    WeightPounds as Weight_in_pounds
+FROM `course-3-week-3-327122.BellaBeat.weightLogInfo_merged_edited`
+INNER JOIN `course-3-week-3-327122.BellaBeat.dailyActivity_merged` 
+    ON `course-3-week-3-327122.BellaBeat.weightLogInfo_merged_edited`.Id = `course-3-week-3-327122.BellaBeat.dailyActivity_merged`. Id
+
+
