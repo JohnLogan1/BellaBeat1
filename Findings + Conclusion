@@ -1,0 +1,8 @@
+Findings:
+  1. The Average_Total_Steps of the participants was highest during Tuesdays and Saturdays. There seems to be a gradual increase in Average_Total_Steps between
+    Sunday and Tuesday, and a decrease up until Friday.
+  2. There is a positive correlation between Average_Total_Steps and Calories.
+  3. There is a positive correlation between Calories and VeryActiveMinutes.
+  4. The most calories were burned between the hours of 10:00 and 18:00. There is a gradual increase from 00:00 to 18:00, and then a visible decrease. The greatest
+    amount of calories were burned from early morning to early evening.
+  5. 
