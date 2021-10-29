@@ -1,0 +1,87 @@
+Here is the link to the RMD file: https://9808ef6aec6149df82badcd788c347b3.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2FBellaBeat.html 
+
+
+---
+title: "BellaBeat"
+author: "John Sliwka"
+date: "10/27/2021"
+output: html_document
+---
+# Install Tidyverse
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+
+# Load the Data
+```{r}
+dailyActivity_merged <- read_csv("BellaBeat Files/dailyActivity_merged.csv")
+
+sleepDay <- read_csv("BellaBeat Files/sleepDay_merged.csv")
+
+weightLogInfo_merged <- read_csv("BellaBeat Files/weightLogInfo_merged.csv")
+
+```
+
+
+# Combine the Data
+```{r}
+combined_dActivity_sleepDay <- merge(sleepDay, dailyActivity_merged, by="Id")
+
+combined_dActivity_sleepDay_weightLog <- merge(combined_dActivity_sleepDay, weightLogInfo_merged, by= "Id")
+
+```
+
+
+#### I Manipulated the 'dailyActivity_merged' Dataset on Excel, in Order to Add the Days of the Week (1=Sunday, 7=Saturday) and Averages for Certain Values, to Determine if there were patterns on different days of the week. This Table is called 'Weekday_Table'
+```{r}
+Weekday_Table <- read_csv("BellaBeat Files/bquxjob_323ecc13_17cbdfa0086.csv")
+
+summary(Weekday_Table)
+```
+
+# Interesting Finds:
+
+## Weekday (1=Sunday, 7=Saturday), and AverageTotalSteps:
+```{r}
+ggplot(data = Weekday_Table) + geom_smooth(mapping = aes(x = WeekDay, y = Avg_Total_Steps)) + geom_point(mapping = aes(x = WeekDay, y = Avg_Total_Steps))
+
+```
+
+
+## Average Total Steps and Average Calories
+```{r}
+ggplot(data = Weekday_Table) + geom_point(mapping = aes(x = Avg_Total_Steps, y = Avg_Calories)) 
+
+```
+
+
+### The correlation between Average Total Steps and Average Calories is positive:
+```{r}
+Weekday_Table %>% 
+  summarise(cor(Avg_Calories, Avg_Total_Steps))
+```
+
+
+## Correlation between Calories and VeryActiveMinutes is positive:
+```{r}
+dailyActivity_merged %>% 
+  summarise(cor(Calories, VeryActiveMinutes))
+```
+
+
+## I created a table in Excel based off of the hourlyCalories_merged data to find the average calories burned per hour
+```{r}
+Avg_Cal_Per_Hour <- read_csv("BellaBeat Files/Avg_Cal_Per_Hour.csv")
+
+Avg_Cal_Per_Hour %>% 
+  summarise(min(Avg_Calories), median(Avg_Calories), max(Avg_Calories))
+```
+
+
+## Plot of Avg_Cal_Per_Hour:
+```{r}
+ggplot(data = Avg_Cal_Per_Hour) + geom_point(mapping = aes(x = Activity_Hour, y = Avg_Calories)) + geom_smooth(mapping = aes(x = Activity_Hour, y = Avg_Calories))
+
+```
