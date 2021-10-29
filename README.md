@@ -13,3 +13,5 @@ I have learned a lot from this project. Here are some of my personal takeaways:
   7. I enjoy coding, and find it rewarding when I fix an error in my code or discover something interesting in the data.
   8. I have a lot to learn. 
     
+Here is the link to the case study:
+https://d18ky98rnyall9.cloudfront.net/QWpX1RwgS1CqV9UcILtQQA_76f613fdf2844940b0b31f8f0bb1b83f_Case-Study-2-_-How-can-a-wellness-technology-company-play-it-smart.pdf?Expires=1635292800&Signature=Pe0KdZtjPNAxtNknippu~cb2WuqRbkENuthQXyEsMXI~YzN~IHk8QpRtBFXUmQTn2IigffioJwhM7C3M58piDjLbGsUGo7ZG895IPlbSfbtTP3RdSo2yFBxPElnb~2x~u3v-1izw~3H235colgct71G4oCkruuCSZTXO7j2cq9o_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A 
