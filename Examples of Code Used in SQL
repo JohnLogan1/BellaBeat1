@@ -1,0 +1,31 @@
+Here are some examples of queries that I ran in SQL to create tables/identify trends in data. I would save the tables as a CSV and upload to either Excel or R to 
+analyze.
+
+#Taken from a table which I edited in Excel:
+SELECT
+    DISTINCT(WeekDay),
+    SUM(Calories) as Total_Calories,
+    SUM(TotalSteps) as Total_Steps,
+    SUM(SedentaryMinutes) as Total_Sedentary_Minutes
+FROM `course-3-week-3-327122.BellaBeat.Edited_Daily_Activity_Merged`
+GROUP BY WeekDay
+ORDER BY WeekDay
+
+
+SELECT
+    DISTINCT(WeekDay),
+    AVG(Calories) as Avg_Calories,
+    AVG(TotalSteps) as Avg_Total_Steps,
+    AVG(SedentaryMinutes) as Avg_Sedentary_Minutes
+FROM `course-3-week-3-327122.BellaBeat.Edited_Daily_Activity_Merged`
+GROUP BY WeekDay
+ORDER BY WeekDay
+
+
+## Finding the average calories for each hour of the day; I would change the hour in the WHERE statement and copy the result to a Spreadsheet, which I 
+## repeated for each hour of the day(I couldn't think of a quicker way to query each hour into a single table)
+SELECT
+        AVG(Calories) as Avg_Calories
+FROM `course-3-week-3-327122.BellaBeat.hourlyCalories_merged_edited`
+WHERE Activity_Hour = '23:00'
+
